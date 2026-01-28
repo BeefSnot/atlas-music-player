@@ -1,6 +1,11 @@
 import { Moon, Sun } from "lucide-react";
 
-export default function Footer({ isDarkMode, toggleDarkMode }) {
+interface FooterProps {
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}
+
+export default function Footer({ isDarkMode, toggleDarkMode }: FooterProps) {
   const year = new Date().getFullYear();
   return (
     <div className="flex flex-col items-center gap-4 p-8 w-full">
