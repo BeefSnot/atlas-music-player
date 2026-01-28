@@ -1,14 +1,12 @@
-// Type definitions for the music player application
 
 export interface Song {
   id: string;
   title: string;
   artist: string;
   genre: string;
-  duration: number; // in seconds
+  duration: number;
   cover?: string;
-  song?: string; // URL to the audio file
-}
+  song?: string; 
 
 export interface PlayListItemProps {
   title: string;

@@ -29,6 +29,7 @@ export default function PlayControls({
     <div className="flex items-center justify-between w-full max-w-md mb-6">
       <button 
         onClick={onSpeedChange}
+        aria-label="Speed"
         className="text-ink-500 hover:text-ink-900 dark:text-ink-400 dark:hover:text-ink-100 font-medium text-sm w-8"
       >
         {speed}x
@@ -36,12 +37,14 @@ export default function PlayControls({
       <button 
         onClick={onPrev}
         disabled={disablePrev}
+        aria-label="Previous"
         className={`text-ink-500 hover:text-ink-900 dark:text-ink-400 dark:hover:text-ink-100 ${disablePrev ? "opacity-50 cursor-not-allowed" : ""}`}
       >
         <SkipBack size={24} />
       </button>
       <button 
         onClick={onPlayPause}
+        aria-label={isPlaying ? "Pause" : "Play"}
         className="bg-ember-500 text-ember-50 rounded-lg p-4 hover:bg-ember-600 shadow-md dark:bg-ember-600 dark:hover:bg-ember-500 transition-colors"
       >
         {isPlaying ? <Pause size={32} fill="white" /> : <Play size={32} fill="white" />}
@@ -49,12 +52,14 @@ export default function PlayControls({
       <button 
         onClick={onNext}
         disabled={disableNext}
+        aria-label="Next"
         className={`text-ink-500 hover:text-ink-900 dark:text-ink-400 dark:hover:text-ink-100 ${disableNext ? "opacity-50 cursor-not-allowed" : ""}`}
       >
         <SkipForward size={24} />
       </button>
       <button 
         onClick={onShuffle}
+        aria-label="Shuffle"
         className={`${isShuffle ? "text-ember-500 dark:text-ember-400" : "text-ink-500 dark:text-ink-400"} hover:text-ink-900 dark:hover:text-ink-100 transition-colors`}
       >
         <Shuffle size={20} />
