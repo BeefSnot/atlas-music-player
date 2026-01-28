@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@theme {
+	--color-ember-50: #fdf6f2;
+	--color-ember-100: #fbeae1;
+	--color-ember-200: #f6d1bf;
+	--color-ember-300: #f0b195;
+	--color-ember-400: #e78863;
+	--color-ember-500: #dc5f38;
+	--color-ember-600: #c44a2b;
+	--color-ember-700: #a03924;
+	--color-ember-800: #7f2f21;
+	--color-ember-900: #63241c;
+
+	--color-ocean-50: #f2f7fb;
+	--color-ocean-100: #e4eef7;
+	--color-ocean-200: #c7ddef;
+	--color-ocean-300: #9cc3e1;
+	--color-ocean-400: #6fa6d0;
+	--color-ocean-500: #4b8bbf;
+	--color-ocean-600: #3b73a6;
+	--color-ocean-700: #315d86;
+	--color-ocean-800: #2b4c6c;
+	--color-ocean-900: #223a52;
+
+	--color-ink-50: #f6f7f9;
+	--color-ink-100: #eceff3;
+	--color-ink-200: #d6dce5;
+	--color-ink-300: #b7c0cf;
+	--color-ink-400: #8e9cb1;
+	--color-ink-500: #6c7a93;
+	--color-ink-600: #55617a;
+	--color-ink-700: #424b61;
+	--color-ink-800: #323949;
+	--color-ink-900: #222735;
+
+	--font-sans: "Inter", "SF Pro Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@variant dark (&:where(.dark, .dark *));

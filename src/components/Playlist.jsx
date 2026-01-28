@@ -2,8 +2,8 @@ import PlayListItem from "./PlayListItem";
 
 export default function Playlist() {
   return (
-    <div className="flex flex-col w-full md:w-1/2 mt-8 md:mt-0 md:pl-8">
-      <h3 className="text-slate-900 font-bold mb-4 px-3 text-lg">Playlist</h3>
+    <div className="flex flex-col w-full">
+      <h3 className="text-ink-900 dark:text-ink-50 font-bold mb-4 text-lg">Playlist</h3>
       <div className="flex flex-col gap-1">
         <PlayListItem title="Painted in Blue" artist="Soul Canvas" time="5:55" current={true} />
         <PlayListItem title="Tidal Drift" artist="Echoes of the Sea" time="8:02" />
