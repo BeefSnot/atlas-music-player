@@ -7,6 +7,7 @@ export interface Song {
   genre: string;
   duration: number; // in seconds
   cover?: string;
+  song?: string; // URL to the audio file
 }
 
 export interface PlayListItemProps {

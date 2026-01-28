@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import CurrentlyPlaying from "./CurrentlyPlaying";
 import Playlist from "./Playlist";
 import LoadingSkeleton from "./LoadingSkeleton";
+import AudioPlayer from "./AudioPlayer";
 import { Song } from "../types";
 
 export default function MusicPlayer() {
@@ -12,6 +13,16 @@ export default function MusicPlayer() {
   const [speed, setSpeed] = useState<number>(1);
   const [isShuffle, setIsShuffle] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (currentSong) {
+      fetch(`/api/v1/songs/${currentSong.id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setCurrentSong((prev) => (prev?.id === data.id ? { ...prev, ...data } : prev));
+        });
+    }
+  }, [currentSong?.id]);
 
   useEffect(() => {
     // Fetch playlist
@@ -82,6 +93,13 @@ export default function MusicPlayer() {
 
   return (
     <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto bg-ember-50 dark:bg-ink-900 rounded-2xl shadow-xl border border-ink-200 dark:border-ink-800 overflow-hidden divide-y divide-ink-200 dark:divide-ink-800 md:divide-y-0 md:divide-x">
+      <AudioPlayer
+        currentSong={currentSong}
+        isPlaying={isPlaying}
+        volume={volume}
+        speed={speed}
+        onEnded={handleNext}
+      />
       <div className="w-full md:w-1/2 p-6 md:p-8">
         <CurrentlyPlaying
           currentSong={currentSong}
