@@ -7,8 +7,9 @@ describe("MusicPlayer", () => {
     render(<MusicPlayer />);
     
     await waitFor(() => {
-        expect(screen.getByText("Mock Song 1")).toBeInTheDocument();
-        expect(screen.getByText("Mock Artist 1")).toBeInTheDocument();
+        // Use getAllByText because the text appears in both the main player and the playlist
+        expect(screen.getAllByText("Mock Song 1")[0]).toBeInTheDocument();
+        expect(screen.getAllByText("Mock Artist 1")[0]).toBeInTheDocument();
     });
   });
 
